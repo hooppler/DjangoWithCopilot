@@ -1,0 +1,9 @@
+<h1>Village Tourism Portal</h1>
+<ul>
+    {% for village in villages %}
+        <li>
+            <a href="{% url 'village_detail' village.pk %}">{{ village.name }}</a>
+            - {{ village.location }}
+        </li>
+    {% endfor %}
+</ul>
