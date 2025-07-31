@@ -1,0 +1,24 @@
+<h2>{{ village.name }}</h2>
+<p>{{ village.description }}</p>
+<p>Location: {{ village.location }}</p>
+{% if village.image %}
+<img src="{{ village.image.url }}" alt="{{ village.name }}">
+{% endif %}
+
+<h3>Attractions</h3>
+<ul>
+    {% for attraction in village.attractions.all %}
+        <li>{{ attraction.name }}: {{ attraction.description }}</li>
+    {% empty %}
+        <li>No attractions listed.</li>
+    {% endfor %}
+</ul>
+
+<h3>Events</h3>
+<ul>
+    {% for event in village.events.all %}
+        <li>{{ event.title }} on {{ event.date }}: {{ event.description }}</li>
+    {% empty %}
+        <li>No events listed.</li>
+    {% endfor %}
+</ul>
