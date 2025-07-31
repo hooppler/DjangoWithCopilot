@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Village Tourism</title>
+</head>
+<body>
+    <h1>Welcome to Village Tourism!</h1>
+    <p>
+        Discover the beauty and culture of local villages. Our platform allows you to explore unique destinations, learn about village life, and participate in special events. Become a part of our community by submitting your application below!
+    </p>
+
+    <h2>Apply to Participate</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Application</button>
+    </form>
+</body>
+</html>
